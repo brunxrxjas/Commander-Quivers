@@ -1,0 +1,492 @@
+/* General Styles */
+body {
+  font-family: 'Arial', sans-serif;
+  font-size: large;
+  margin: 0;
+  background-color: #1a1a2e; /* Dark Navy Blue */
+  color: white; /* Default text color for body */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.page {
+  background-color: #282828; 
+  color: #f0f0f0; 
+  position: relative;
+  z-index: 10; /* Above background elements */
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3); /* Slightly adjusted shadow */
+  margin-top: 20px;
+  width: 90%;
+  max-width: 1200px;
+  text-align: center;
+}
+
+/* --- MODIFIED: Global heading color for dark theme --- */
+h1, h2, h3 {
+  color: #e0e0e0; 
+}
+
+/* ===== FORM INPUT STYLES ===== */
+
+.form-container {
+    max-width: 450px;
+    margin: 30px auto;
+    padding: 25px;
+    background: #333333; 
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.4); 
+}
+
+.form-label {
+    display: block;
+    margin: 15px 0 5px;
+    color: #e0e0e0; /* Changed from #2c3e50 */
+    font-weight: bold;
+    text-align: left;
+    max-width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* --- MODIFIED: Input field styles for dark theme --- */
+input[type="text"],
+input[type="email"],
+input[type="password"],
+select {
+    padding: 12px 15px;
+    margin: 10px 0;
+    width: 100%;
+    max-width: 400px;
+    border: 2px solid #555; 
+    background-color: #444; /* Darker input background */
+    color: #fff; /* Light input text */
+    border-radius: 6px;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    box-sizing: border-box;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Focus state */
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus,
+select:focus {
+    border-color: #ff4d4d; /* Keep focus color or adjust */
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(255, 77, 77, 0.3); /* Adjust shadow if needed */
+    background-color: #505050; /* Darker focus background */
+}
+
+/* Placeholder styling */
+::placeholder {
+    color: #aaa;
+    opacity: 1;
+}
+
+input.error {
+  border-color: #e74c3c;
+  background-color: #5a3a37; /* Darker error background */
+  color: #fdd; /* Lighter error text */
+}
+
+/* Features, Testimonials, FAQ, Community Sections */
+
+.features, .testimonials, .faq, .community {
+  margin-bottom: 40px; 
+}
+
+.feature, .testimonial, .faq-item, .community {
+  background-color: #333333; /* Changed from #f9f9f9 */
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.4); /* Adjusted shadow */
+}
+
+/* Ensure text within these sections is light */
+.feature p, .testimonial p, .faq-item p, .community p {
+    color: #cccccc; /* Light color for paragraph text */
+    margin: 0;/
+}
+
+/* Keep specific alignments */
+.feature, .community {
+  text-align: center;
+}
+.testimonial, .faq-item {
+  text-align: left;
+}
+
+/* --- Original grid structures --- */
+.features {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Three columns for features */
+  gap: 20px;
+}
+
+.testimonial-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* Two columns for testimonials */
+  gap: 20px;
+}
+
+.faq-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* Two columns for FAQs */
+  gap: 20px;
+}
+
+
+/* CTA Banner Styles */
+.cta-banner {
+  background-color: #800020; /* Burgundy - Keep or adjust for dark theme */
+  color: white; /* White text for contrast */
+  padding: 20px;
+  border-radius: 8px;
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+.cta-banner a {
+  color: white;
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+.cta-banner a:hover {
+  color: #ffcccb; /* Light red/pink for hover effect */
+}
+
+
+/* Footer */
+footer {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 40px;
+  /* Footer links might need color adjustment if they exist */
+}
+
+
+/* ===== Left Side Vertical Text ===== */
+
+.vertical-text {
+  font-family: 'MedievalSharp', cursive;
+  position: fixed;
+  left: -250px; /* Even more left */
+  top: 50%;
+  transform: translateY(-50%) rotate(-90deg);
+  font-size: 60px;
+  font-weight: bold;
+  color: #e0e0e0; 
+  text-shadow: 0 0 5px rgba(255, 255, 255, 0.1);
+  white-space: nowrap;
+  z-index: 1000;
+  pointer-events: none;
+  background: transparent;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.vertical-text:hover {
+  opacity: 0.8;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+  cursor: default;
+}
+
+/* ===== Right Side Mana Symbols ===== */
+
+.vertical-mana {
+  position: fixed;
+  right: 40px; 
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 20px; 
+  z-index: 1000;
+  pointer-events: none;
+  padding: 15px;
+  background: rgba(0, 0, 0, 0.1); 
+  border-radius: 8px;
+}
+
+.mana-symbol {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+
+  transition: transform 0.2s ease;
+}
+
+.mana-symbol:hover {
+  transform: scale(1.1);
+  cursor: pointer; 
+}
+
+/* Button Styles */
+button, .back-button {
+  padding: 10px 20px;
+  margin: 10px;
+  background-color: #ff4d4d; 
+  border: none;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+button:hover, .back-button:hover {
+  background-color: #cc0000; 
+}
+
+/* ===== HERO SECTION ===== */
+.hero {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  align-items: center;
+  margin-bottom: 40px;
+}
+.hero-image {
+  position: relative;
+  padding-bottom: 50%; 
+  height: 0;
+  overflow: hidden;
+  border-radius: 10px; 
+  margin-top: 20px; 
+}
+
+.hero-image img, .hero-image video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+border-radius: 8px; /* Match container */
+}
+
+/* Overlay might still be useful */
+.hero-overlay {
+  background: rgba(0,0,0,0.5);
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
+
+/* ===== TUTORIAL SECTION ===== */
+
+#tutorialSection {
+  background-color: #333333;
+  padding: 20px;
+  border-radius: 8px;
+  margin: 20px 0;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.4); 
+}
+
+.tutorial-video {
+  margin: 15px 0;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.tutorial-video video {
+  width: 100%;
+  max-width: 800px;
+  display: block;
+  margin: 0 auto;
+}
+
+/* Tutorial button inside the section - keep styles or adjust */
+.tutorial-button {
+  background-color: #666; /* Medium gray */
+  padding: 8px 16px;
+  font-size: 14px;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.tutorial-button:hover {
+  background-color: #555;
+}
+
+/* ===== SHOW TUTORIAL BUTTON ===== */
+.tutorial-button-container {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+  width: 100%;
+}
+
+.show-tutorial-button {
+  background-color: #4CAF50; /* Keep green or choose another accent */
+  color: white;
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.show-tutorial-button:hover {
+  background-color: #45a049;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+/* Collection and Wishlist Item Styles */
+
+.collection-item, .wishlist-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  border-bottom: 1px solid #444; 
+  color: #cccccc; /* Ensure text is light */
+}
+
+.collection-item .card-name,
+.wishlist-item .card-name {
+  flex-grow: 1;
+  margin: 0 15px;
+  color: #e0e0e0; /* Explicitly set card name color */
+}
+
+.collection-item .delete-btn,
+.wishlist-item .delete-btn {
+  margin-left: 10px;
+
+}
+
+.wishlist-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.card-thumbnail {
+  width: 150px; /* Or adjust size */
+  height: auto;
+  margin-right: 10px;
+  border-radius: 4px; 
+}
+
+/* Alert System */
+#custom-alert {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #333;
+  color: white;
+  padding: 12px 20px;
+  border-radius: 6px;
+  font-size: 14px;
+  z-index: 1000;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  max-width: 300px;
+}
+
+#custom-alert.show {
+  opacity: 1;
+}
+
+#custom-alert.success {
+  background-color: #4CAF50;
+}
+
+#custom-alert.error {
+  background-color: #f44336;
+}
+
+#custom-alert.warning {
+  background-color: #ff9800;
+}
+
+#custom-alert.info {
+  background-color: #2196F3;
+}
+
+/* ===== RESPONSIVE DESIGN ===== */
+@media (max-width: 992px) {
+  .vertical-text, .vertical-mana {
+    display: none;
+  }
+
+  .hero {
+    grid-template-columns: 1fr;
+  }
+
+  .features, .testimonial-grid, .faq-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .page {
+    width: 95%;
+    padding: 15px;
+  }
+
+  h1 {
+    font-size: 1.8rem; 
+  }
+
+  .hero-image {
+    padding-bottom: 75%; /* 4:3 aspect ratio on mobile */
+  }
+
+   .testimonial-grid, .faq-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (min-width: 2000px) {
+  .vertical-text {
+    left: -150px; 
+  }
+}
+@media (max-width: 600px) {
+  .features {
+    grid-template-columns: 1fr; 
+  }
+   .tutorial-video-container { 
+      padding-bottom: 75%; 
+    }
+}
+
+
+@media (max-width: 480px) {
+  .form-container {
+      padding: 20px 15px;
+      margin: 20px;
+  }
+
+  input[type="text"],
+  input[type="email"],
+  input[type="password"],
+  select {
+      padding: 10px 12px;
+      font-size: 15px;
+  }
+}
